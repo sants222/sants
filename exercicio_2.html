@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="style.css">
+		<title>Fibonacci</title>
+		<script>
+        function fibonacci()
+        {
+           var a  = document.getElementById("numero").value
+            if(a==1 || a == 2)
+            {
+                 document.getElementById("result").innerHTML  = "1";
+                 return 1;
+            }
+            var anterior = 1;
+            var atual = 1;
+            var x = 0;
+            if(a>2)
+            {
+                 for(i = 3 ; i<= a ; i++)
+                 {
+                    x = atual +  anterior; 
+                    anterior = atual;
+                    atual = x;
+                 }
+                 document.getElementById("result").innerHTML  = x;
+                 return(x);
+            }
+        } 
+    </script>  
+	</head>
+	<body>
+		<h3 id="result"></h3>
+   		<input type="number" id="numero"/>
+   		<button onclick="javascript:fibonacci()"> Executar </button> 
+
+	</body>
+</html>
